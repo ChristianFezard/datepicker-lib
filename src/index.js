@@ -1,6 +1,30 @@
-import React from 'react'
-import styles from './styles.module.css'
+import React, { useState } from 'react'
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+const DateTimePicker = ({ value, onDateChange }) => {
+  const [selectedDate, setSelectedDate] = useState(value)
+
+  const handleDateChange = (event) => {
+    setSelectedDate(event.target.value)
+    onDateChange(event.target.value)
+  }
+
+  const handleToday = () => {
+    const today = new Date()
+    const todayDate = today.toLocaleDateString('en-US')
+    setSelectedDate(todayDate)
+    onDateChange(todayDate)
+  }
+
+  return (
+    <div>
+      <input
+        type='date'
+        value={selectedDate}
+        onChange={handleDateChange}
+      />
+      <button onClick={handleToday}>Today's date</button>
+    </div>
+  )
 }
+
+export default DateTimePicker
