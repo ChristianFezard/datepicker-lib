@@ -1,7 +1,7 @@
 {
   "name": "datepickercomp-lib",
-  "version": "1.0.3",
-  "description": "small component to manage date and/or time",
+  "version": "1.0.5",
+  "description": "small component to manage date",
   "author": "ChristianFezard",
   "license": "MIT",
   "repository": "ChristianFezard/datepicker-lib",

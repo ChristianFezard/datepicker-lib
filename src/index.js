@@ -1,11 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const DateTimePicker = ({ value, onDateChange }) => {
+const DatePicker = ({ value, onDateChange }) => {
   const [selectedDate, setSelectedDate] = useState(value)
+
+  useEffect(() => {
+    setSelectedDate(value)
+  }, [value])
 
   const handleDateChange = (event) => {
     setSelectedDate(event.target.value)
-    onDateChange(event.target.value)
+    const formattedDate = new Date(event.target.value).toLocaleDateString('en-US')
+    onDateChange(formattedDate)
   }
 
   return (
@@ -19,4 +24,4 @@ const DateTimePicker = ({ value, onDateChange }) => {
   )
 }
 
-export default DateTimePicker
+export default DatePicker
