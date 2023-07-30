@@ -8,13 +8,6 @@ const DateTimePicker = ({ value, onDateChange }) => {
     onDateChange(event.target.value)
   }
 
-  const handleToday = () => {
-    const today = new Date()
-    const todayDate = today.toLocaleDateString('en-US')
-    setSelectedDate(todayDate)
-    onDateChange(todayDate)
-  }
-
   return (
     <div>
       <input
@@ -22,7 +15,6 @@ const DateTimePicker = ({ value, onDateChange }) => {
         value={selectedDate}
         onChange={handleDateChange}
       />
-      <button onClick={handleToday}>Today's date</button>
     </div>
   )
 }
