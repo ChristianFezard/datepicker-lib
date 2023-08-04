@@ -28,3 +28,7 @@ class Example extends Component {
 ## License
 
 MIT © [ChristianFezard](https://github.com/ChristianFezard)
+
+### Link for the NPM Datepickercomp-lib package
+
+link : [https://www.npmjs.com/package/datepickercomp-lib](https://www.npmjs.com/package/datepickercomp-lib)
